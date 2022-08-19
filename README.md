@@ -8,7 +8,7 @@ Um simples app como parte dos meus estudos em `swift`. O App exibe uma lista de 
 
 * Xcode
 
-![Screen principal](screen1.png | width=200)
+![Screen principal](screen1.png)
 
-![Screen detalhes](detail-screen.png | width=200)
+![Screen detalhes](detail-screen.png)
 
