@@ -7,3 +7,8 @@ Um simples app como parte dos meus estudos em `swift`. O App exibe uma lista de 
 ## Requisitos
 
 * Xcode
+
+![Screen principal](screen1.png)
+
+![Screen detalhes](detail-screen.png)
+
