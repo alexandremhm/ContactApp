@@ -14,12 +14,12 @@ enum Contacts {
 
 struct Section {
     let letter: String
-    let names: [String]
+    let names: [Contact]
 }
 
 var sections = [Section]()
 
-let userNames = Contacts.contacts.map { $0.name }
+let userNames = Contacts.contacts.map { $0 }
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -30,15 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let groupedDictionary = Dictionary(grouping: userNames, by: {String($0.prefix(1))})
-        
-        print(groupedDictionary)
-        
+        let groupedDictionary = Dictionary(grouping: userNames, by: {String($0.name.prefix(1))})
         let keys = groupedDictionary.keys.sorted()
-
-        sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
         
-        print(sections)
+        sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,15 +74,16 @@ extension ViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let index = indexPath.row
-        contact = Contacts.contacts[index]
+        let section = sections[indexPath.section]
+        contact = section.names[index]
         self.performSegue(withIdentifier: "ContactDetail", sender: contact)
     }
     
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
        let section = sections[indexPath.section]
        let username = section.names[indexPath.row]
-       cell.textLabel?.text = username
+       cell.textLabel?.text = username.name
        return cell
     }   
     
