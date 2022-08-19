@@ -2,13 +2,13 @@ import UIKit
 
 enum Contacts {
     static let contacts: [Contact] = [
-        Contact(name: "Matheus", telephone: "31981218998"),
-        Contact(name: "Luix", telephone: "312665156151"),
-        Contact(name: "Otavio", telephone: "31981218998"),
-        Contact(name: "Leo", telephone: "31981218998"),
-        Contact(name: "Luiza", telephone: "31981218998"),
-        Contact(name: "Amanda", telephone: "31981218998"),
-        Contact(name: "Jorgina", telephone: "31981218998"),
+        Contact(name: "Matheus", telephone: "3133333333"),
+        Contact(name: "Luix", telephone: "3133333333"),
+        Contact(name: "Otavio", telephone: "3133333333"),
+        Contact(name: "Leo", telephone: "3133333333"),
+        Contact(name: "Luiza", telephone: "3133333333"),
+        Contact(name: "Amanda", telephone: "3133333333"),
+        Contact(name: "Jorgina", telephone: "3133333333"),
     ]
 }
 
